@@ -24,6 +24,8 @@ export function MainRouter() {
         ) : (
           <Routes>
             <Route path={PUBLIC_PAGE.HOME} element={<HomePage />} />
+            <Route path={`${PUBLIC_PAGE.HOME}:id`} element={<HomePage />} />
+
             <Route path={PUBLIC_PAGE.MOVIES} element={<HomePage />} />
             <Route path={PUBLIC_PAGE.SERIES} element={<HomePage />} />
             <Route path={PUBLIC_PAGE.KIDS} element={<HomePage />} />

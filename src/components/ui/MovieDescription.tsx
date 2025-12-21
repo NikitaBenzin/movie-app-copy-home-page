@@ -1,18 +1,17 @@
 import { motion } from "framer-motion"
 import { Play } from "lucide-react"
-import type { MovieDescription } from "../../types/movieType"
+import type { Movie } from "../../types/movieType"
 interface Props {
-  movieDescription: MovieDescription
+  movie: Movie
 }
 
-export function MovieDescription({ movieDescription }: Props) {
-  const { ageLimit, description, duration, rating, releaseYear } =
-    movieDescription
+export function MovieDescription({ movie }: Props) {
+  const { ageLimit, description, duration, rating, releaseYear, assets } = movie
   return (
     <div className="flex flex-col items-start gap-6">
       <motion.img
         className="w-85"
-        src="/peaky-blinders/film-logo.png"
+        src={assets.logo}
         alt="Movie name."
         draggable={false}
         initial={{ opacity: 0 }} // Начальное состояние

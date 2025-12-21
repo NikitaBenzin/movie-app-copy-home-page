@@ -20,7 +20,7 @@ export function SeasonsLinks({ seasonLinks }: Props) {
           <li key={idx}>
             <a
               className={`${
-                season.link === path
+                season.link === path || idx === 0
                   ? "text-text border-l border-text"
                   : "text-text-muted"
               } [writing-mode:vertical-rl] pl-2 rotate-180`}

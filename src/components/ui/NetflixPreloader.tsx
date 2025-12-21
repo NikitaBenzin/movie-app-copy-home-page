@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 export const NetflixPreloader = () => {
   return (
     <motion.div
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-black"
+      className="fixed inset-0 z-100 flex items-center justify-center bg-bg"
       exit={{ opacity: 0, scale: 1.1 }} // Анимация исчезновения
       transition={{ duration: 0.8, ease: "easeInOut" }}
     >
@@ -22,10 +22,12 @@ export const NetflixPreloader = () => {
           ease: "easeInOut",
         }}
       >
-        {/* Здесь ваше лого (SVG или текст) */}
-        <h1 className="text-[#E50914] text-7xl font-black tracking-tighter uppercase italic">
-          Netflix
-        </h1>
+        <img
+          className="w-42"
+          src="/netflix-logo.png"
+          alt="Netflix logo"
+          draggable={false}
+        />
       </motion.div>
     </motion.div>
   )

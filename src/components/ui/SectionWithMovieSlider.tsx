@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 import { ChevronLeft, Play } from "lucide-react"
 import { useState } from "react"
+import { Link } from "react-router-dom"
 import usePath from "../../hooks/usePath"
 import type { Movie } from "../../types/movieType"
 interface Props {
@@ -9,8 +10,8 @@ interface Props {
 }
 
 export function SectionWithMovieSlider({ sectionTitle, movies }: Props) {
-  const [currentIndex, setCurrentIndex] = useState(0)
   const path = usePath()
+  const [currentIndex, setCurrentIndex] = useState(0)
   const itemsPerPage = 5
   const totalPages = Math.ceil(movies.length / itemsPerPage)
   const next = () => {
@@ -60,9 +61,8 @@ export function SectionWithMovieSlider({ sectionTitle, movies }: Props) {
           </button>
         </div>
       </motion.div>
-      {/* flex justify-between gap-6 bg-bg slider-shadow  */}
       <motion.ul
-        className="flex bg-bg gap-7 slider-shadow transition-transform duration-700 ease-[cubic-bezier(0.5,0,0.1,1)]"
+        className="flex gap-7 transition-transform duration-700 ease-[cubic-bezier(0.5,0,0.1,1)]"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         variants={container}
         initial="hidden"
@@ -83,7 +83,7 @@ export function SectionWithMovieSlider({ sectionTitle, movies }: Props) {
                 draggable={false}
               />
             ) : (
-              <a href={`/${movie.id}`} className="w-full h-full">
+              <Link to={`/${movie.id}`} className="w-full h-full">
                 <button className="absolute z-10 top-1/2 left-1/2 -translate-1/2 w-15 h-15 bg-text-muted rounded-full flex items-center justify-center group-hover:scale-105 duration-300">
                   <Play className="text-text" fill="var(--text)" size={20} />
                 </button>
@@ -93,7 +93,7 @@ export function SectionWithMovieSlider({ sectionTitle, movies }: Props) {
                   alt="Movie trailer cover."
                   draggable={false}
                 />
-              </a>
+              </Link>
             )}
           </motion.li>
         ))}
