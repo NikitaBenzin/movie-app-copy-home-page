@@ -57,10 +57,16 @@ button {
 .slider-shadow {
   -webkit-box-shadow: 0px -10px 35px 30px rgba(0, 0, 0, 1);
   -moz-box-shadow: 0px -10px 35px 30px rgba(0, 0, 0, 1);
-  box-shadow: 0px -10px 35px 30px rgba(0, 0, 0, 1);
+  box-shadow: 0px 0px 35px 30px rgba(0, 0, 0, 1);
 }
 
 
 p,span,a {
   font-size: 19px;
+}
+
+.image-bottom-shadow {
+  mask: linear-gradient(
+    to bottom, var(--bg-main) 60%, transparent
+  )
 }

@@ -121,4 +121,76 @@ export const MOVIES_MOCK = [
       { number: 2, link: "/watch/squid-game/s2" },
     ],
   },
+  {
+    id: "venom",
+    title: "Venom",
+    releaseYear: 2018,
+    ageLimit: "16+",
+    rating: "6.6/10",
+    duration: "1hr 52min",
+    mainCharacterName: "Eddie Brock",
+    description:
+      "A failed reporter is bonded to an alien entity, one of many symbiotes who have invaded Earth. But the being takes a liking to Earth and decides to protect it.",
+    assets: {
+      background: "/venom/main-bg.png",
+      videoCover: "/venom/video-cover.png",
+      mainCharacter: "/venom/main-character.png",
+      logo: "/venom/film-logo.png",
+    },
+    seasons: [], // Это фильм
+  },
+  {
+    id: "wednesday",
+    title: "Wednesday",
+    releaseYear: 2022,
+    ageLimit: "16+",
+    rating: "8.1/10",
+    duration: "45min",
+    mainCharacterName: "Wednesday Addams",
+    description:
+      "While attending Nevermore Academy, Wednesday Addams attempts to master her emerging psychic ability, thwart a killing spree and solve the mystery that embroiled her parents 25 years ago.",
+    assets: {
+      background: "/wednesday/main-bg.png",
+      videoCover: "/wednesday/video-cover.png",
+      mainCharacter: "/wednesday/main-character.png",
+      logo: "/wednesday/film-logo.png",
+    },
+    seasons: [{ number: 1, link: "/watch/wednesday/s1" }],
+  },
+  {
+    id: "the-eternaut",
+    title: "The Eternaut",
+    releaseYear: 2025,
+    ageLimit: "18+",
+    rating: "TBD",
+    duration: "1hr",
+    mainCharacterName: "Juan Salvo",
+    description:
+      "After a deadly snowfall kills millions, Juan Salvo and a group of survivors fight against an alien threat controlled by an invisible force.",
+    assets: {
+      background: "/the-eternaut/main-bg.png",
+      videoCover: "/the-eternaut/video-cover.png",
+      mainCharacter: "/the-eternaut/main-character.png",
+      logo: "/the-eternaut/film-logo.png",
+    },
+    seasons: [{ number: 1, link: "/watch/the-eternaut/s1" }],
+  },
+  {
+    id: "mad-max",
+    title: "Mad Max: Fury Road",
+    releaseYear: 2015,
+    ageLimit: "18+",
+    rating: "8.1/10",
+    duration: "2hr 0min",
+    mainCharacterName: "Max Rockatansky",
+    description:
+      "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search for her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+    assets: {
+      background: "/mad-max/main-bg.png",
+      videoCover: "/mad-max/video-cover.png",
+      mainCharacter: "/mad-max/main-character.png",
+      logo: "/mad-max/film-logo.png",
+    },
+    seasons: [], // Это фильм
+  },
 ]
