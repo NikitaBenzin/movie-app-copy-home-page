@@ -1,7 +1,13 @@
 const usePath = () => {
-  const initialPath = window.location.pathname.substring(1)
-  const path = window.location.pathname.replace(initialPath, "")
-  return path
+  let pathname = window.location.pathname
+
+  if (pathname.includes("&")) {
+    console.log("asdad")
+    pathname = pathname.substring(1)
+    pathname = pathname.replace(pathname, "")
+  }
+
+  return pathname
 }
 
 export default usePath

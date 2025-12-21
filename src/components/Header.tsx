@@ -3,9 +3,9 @@ import usePath from "../hooks/usePath"
 
 export function Header() {
   const path = usePath()
-
   return (
-    <header className="fixed w-full flex justify-center items-center py-6">
+    <header className="fixed z-10 w-full flex justify-center items-center py-6">
+      <div className="absolute left-1/2 top-0 -translate-1/2 w-2xl h-128 bg-red-600/10 blur-3xl rounded-full"></div>
       <nav>
         <ul className="flex gap-12 items-center">
           <li>
