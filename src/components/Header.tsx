@@ -31,7 +31,7 @@ export function Header() {
               className={`${
                 path === PUBLIC_PAGE.MOVIES ? "text-text" : "text-text-muted"
               }`}
-              to={PUBLIC_PAGE.MOVIES}
+              to={`${PUBLIC_PAGE.MOVIE}/peaky-blinders`}
             >
               Movies
             </Link>

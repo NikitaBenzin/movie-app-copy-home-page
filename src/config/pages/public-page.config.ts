@@ -1,5 +1,7 @@
 class PublicPage {
   HOME = "/"
+
+  MOVIE = "/movie"
   MOVIES = "/movies"
   SERIES = "/series"
   KIDS = "/kids"

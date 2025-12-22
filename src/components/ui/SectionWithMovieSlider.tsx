@@ -2,6 +2,7 @@ import { motion } from "framer-motion"
 import { ChevronLeft, Play } from "lucide-react"
 import { Link, useParams } from "react-router-dom"
 import YouTube from "react-youtube"
+import { PUBLIC_PAGE } from "../../config/pages/public-page.config"
 import { useSlider } from "../../hooks/useSlider"
 import type { Movie } from "../../types/movieType"
 interface Props {
@@ -87,7 +88,10 @@ export function SectionWithMovieSlider({ sectionTitle, movies }: Props) {
                 <YouTube videoId={movie.trailerId} opts={opts} />
               </div>
             ) : (
-              <Link to={`/${movie.id}`} className="w-full h-full">
+              <Link
+                to={`${PUBLIC_PAGE.MOVIE}/${movie.id}`}
+                className="w-full h-full"
+              >
                 <button className="absolute z-10 top-1/2 left-1/2 -translate-1/2 w-15 h-15 bg-text-muted rounded-full flex items-center justify-center group-hover:scale-105 duration-300">
                   <Play className="text-text" fill="var(--text)" size={20} />
                 </button>
