@@ -1,8 +1,8 @@
 import { motion } from "framer-motion"
 import { ChevronLeft, Play } from "lucide-react"
-import { useState } from "react"
-import { Link } from "react-router-dom"
-import usePath from "../../hooks/usePath"
+import { Link, useParams } from "react-router-dom"
+import YouTube from "react-youtube"
+import { useSlider } from "../../hooks/useSlider"
 import type { Movie } from "../../types/movieType"
 interface Props {
   sectionTitle: string
@@ -10,17 +10,8 @@ interface Props {
 }
 
 export function SectionWithMovieSlider({ sectionTitle, movies }: Props) {
-  const path = usePath()
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const itemsPerPage = 5
-  const totalPages = Math.ceil(movies.length / itemsPerPage)
-  const next = () => {
-    setCurrentIndex(prev => (prev + 1) % totalPages)
-  }
-
-  const prev = () => {
-    setCurrentIndex(prev => (prev - 1 + totalPages) % totalPages)
-  }
+  const { id } = useParams()
+  const { currentIndex, next, prev } = useSlider(movies.length)
 
   const container = {
     hidden: { opacity: 0 },
@@ -37,8 +28,25 @@ export function SectionWithMovieSlider({ sectionTitle, movies }: Props) {
     show: { opacity: 1, translateY: "0px" },
   }
 
+  const opts = {
+    height: "189",
+    width: "352",
+    playerVars: {
+      autoplay: 1,
+      controls: 0,
+      mute: 1,
+      modestbranding: 1,
+      rel: 0,
+      showinfo: 0, // устаревший, но можно оставить
+      fs: 0, // убрать fullscreen
+      iv_load_policy: 3, // убрать аннотации
+      disablekb: 1, // отключить клавиатуру
+      playsinline: 1,
+    },
+  }
+
   return (
-    <div className="relative z-10 flex flex-col gap-6 max-w-495 overflow-hidden">
+    <div className="relative z-10 hidden xl:flex flex-col gap-6 max-w-495 overflow-hidden">
       <motion.div
         className="flex justify-between relative z-10"
         initial={{ translateY: "50px", opacity: 0 }}
@@ -71,17 +79,13 @@ export function SectionWithMovieSlider({ sectionTitle, movies }: Props) {
         {movies.map(movie => (
           <motion.li
             key={movie.id}
-            className="relative group max-h-47.25 min-w-[50%] sm:min-w-[33.33%] lg:min-w-[calc(20%-1.5rem)] lg:max-w-84"
+            className="relative group max-h-47.25 min-w-[50%] sm:min-w-[33.33%] xl:min-w-[calc(20%-1.5rem)] xl:max-w-84 rounded-sm"
             variants={item}
           >
-            {path === `/${movie.id}` ? (
-              <img
-                // className="max-w-84 max-h-47.25 rounded-sm"
-                className="w-full h-full object-cover rounded-sm"
-                src={movie.assets.videoCover}
-                alt="Movie trailer cover."
-                draggable={false}
-              />
+            {id === movie.id ? (
+              <div className="bg-bg rounded-sm">
+                <YouTube videoId={movie.trailerId} opts={opts} />
+              </div>
             ) : (
               <Link to={`/${movie.id}`} className="w-full h-full">
                 <button className="absolute z-10 top-1/2 left-1/2 -translate-1/2 w-15 h-15 bg-text-muted rounded-full flex items-center justify-center group-hover:scale-105 duration-300">

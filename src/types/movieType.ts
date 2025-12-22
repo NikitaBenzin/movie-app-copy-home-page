@@ -6,6 +6,7 @@ export interface SeasonLink {
 export interface Movie extends MovieDescription {
   id: string
   title: string
+  trailerId: string
   mainCharacterName: string
   assets: {
     background: string

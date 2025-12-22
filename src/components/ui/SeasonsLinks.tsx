@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+import { Link } from "react-router-dom"
 import usePath from "../../hooks/usePath"
 import type { SeasonLink } from "../../types/movieType"
 interface Props {
@@ -10,7 +11,7 @@ export function SeasonsLinks({ seasonLinks }: Props) {
 
   return (
     <motion.ul
-      className="flex flex-col-reverse gap-6"
+      className="hidden xl:flex flex-col-reverse gap-6"
       initial={{ translateX: "-100px", opacity: 0 }}
       animate={{ translateX: "0px", opacity: 1 }}
       transition={{ duration: 1 }}
@@ -18,16 +19,16 @@ export function SeasonsLinks({ seasonLinks }: Props) {
       {seasonLinks.length ? (
         seasonLinks.map((season, idx) => (
           <li key={idx}>
-            <a
+            <Link
               className={`${
                 season.link === path || idx === 0
                   ? "text-text border-l border-text"
                   : "text-text-muted"
               } [writing-mode:vertical-rl] pl-2 rotate-180`}
-              href={season.link}
+              to={season.link}
             >
               Season {idx + 1}
-            </a>
+            </Link>
           </li>
         ))
       ) : (

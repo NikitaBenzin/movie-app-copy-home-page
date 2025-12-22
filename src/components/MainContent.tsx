@@ -1,4 +1,4 @@
-import { useMemo } from "react"
+import { useEffect, useMemo } from "react"
 import { useParams } from "react-router-dom"
 import { MOVIES_MOCK } from "../mock-data"
 import type { Movie } from "../types/movieType"
@@ -17,13 +17,20 @@ export function MainContent() {
     return data.find(movie => movie.id === id)
   }, [id, data])
 
+  useEffect(() => {
+    document.body.style.overflow = "hidden"
+
+    return () => {
+      document.body.style.overflow = "auto"
+    }
+  }, [])
   if (!movie) return <p>Movie not found!</p>
 
   return (
-    <main className="p-12 relative bg-bg h-screen grid grid-rows-[auto_253px] justify-items-center">
+    <main className="p-6 xl:p-12 relative bg-bg h-screen grid grid-row-1 xl:grid-rows-[auto_253px] justify-items-center">
       <BackgroundImage imageLink={movie.assets.background} />
 
-      <div className="relative z-10 grid grid-cols-2 font-saira! tracking-wider w-full max-w-495 max-h-235.5">
+      <div className="relative z-10 grid grid-cols-1 xl:grid-cols-2 font-saira! tracking-wider w-full max-w-495 max-h-235.5">
         <div className="flex gap-12 items-center">
           <SeasonsLinks seasonLinks={movie.seasons} />
 

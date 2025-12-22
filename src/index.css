@@ -68,3 +68,16 @@ p,span,a {
     to bottom, var(--bg-main) 95%, transparent
   )
 }
+
+@keyframes progress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.animate-progress {
+  animation: progress 10s linear forwards;
+}

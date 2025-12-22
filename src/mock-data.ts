@@ -2,6 +2,7 @@ export const MOVIES_MOCK = [
   {
     id: "peaky-blinders",
     title: "Peaky Blinders",
+    trailerId: "oVzVdvGIC7U",
     releaseYear: 2013,
     ageLimit: "16+",
     rating: "8.8/10",
@@ -27,6 +28,7 @@ export const MOVIES_MOCK = [
   {
     id: "bloodhounds",
     title: "Bloodhounds",
+    trailerId: "eyiR8pO50JE",
     releaseYear: 2023,
     ageLimit: "18+",
     rating: "8.1/10",
@@ -45,6 +47,7 @@ export const MOVIES_MOCK = [
   {
     id: "dont-look-up",
     title: "Don't Look Up",
+    trailerId: "RbIxYm3mKzI",
     releaseYear: 2021,
     ageLimit: "16+",
     rating: "7.2/10",
@@ -63,6 +66,7 @@ export const MOVIES_MOCK = [
   {
     id: "narcos",
     title: "Narcos",
+    trailerId: "xl8zdCY-abw",
     releaseYear: 2015,
     ageLimit: "18+",
     rating: "8.8/10",
@@ -85,6 +89,7 @@ export const MOVIES_MOCK = [
   {
     id: "red-notice",
     title: "Red Notice",
+    trailerId: "Pj0wz7zu3Ms",
     releaseYear: 2021,
     ageLimit: "13+",
     rating: "6.3/10",
@@ -103,6 +108,7 @@ export const MOVIES_MOCK = [
   {
     id: "squid-game",
     title: "Squid Game",
+    trailerId: "oqxAJKy0ii4",
     releaseYear: 2021,
     ageLimit: "18+",
     rating: "8.0/10",
@@ -124,6 +130,7 @@ export const MOVIES_MOCK = [
   {
     id: "venom",
     title: "Venom",
+    trailerId: "u9Mv98Gr5pY",
     releaseYear: 2018,
     ageLimit: "16+",
     rating: "6.6/10",
@@ -142,6 +149,7 @@ export const MOVIES_MOCK = [
   {
     id: "wednesday",
     title: "Wednesday",
+    trailerId: "Di310WS8zLk",
     releaseYear: 2022,
     ageLimit: "16+",
     rating: "8.1/10",
@@ -160,6 +168,7 @@ export const MOVIES_MOCK = [
   {
     id: "the-eternaut",
     title: "The Eternaut",
+    trailerId: "TqT4fDQQqCc",
     releaseYear: 2025,
     ageLimit: "18+",
     rating: "TBD",
@@ -178,6 +187,7 @@ export const MOVIES_MOCK = [
   {
     id: "mad-max",
     title: "Mad Max: Fury Road",
+    trailerId: "hEJnMQG9ev8",
     releaseYear: 2015,
     ageLimit: "18+",
     rating: "8.1/10",

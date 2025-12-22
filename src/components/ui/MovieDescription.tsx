@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import { Play } from "lucide-react"
+import { useDescription } from "../../hooks/useDescription"
 import type { Movie } from "../../types/movieType"
 interface Props {
   movie: Movie
@@ -7,6 +8,8 @@ interface Props {
 
 export function MovieDescription({ movie }: Props) {
   const { ageLimit, description, duration, rating, releaseYear, assets } = movie
+  const { descriptionControls, logoControls } = useDescription()
+
   return (
     <div className="flex flex-col items-start gap-6">
       <motion.img
@@ -14,17 +17,13 @@ export function MovieDescription({ movie }: Props) {
         src={assets.logo}
         alt="Movie name."
         draggable={false}
-        initial={{ opacity: 0 }} // Начальное состояние
-        animate={{ opacity: 1 }} // Состояние анимации
-        transition={{ duration: 1, delay: 0.5 }}
+        animate={logoControls}
       />
       <motion.div
         className="flex flex-col items-start gap-6"
-        initial={{ translateY: "-50px", opacity: 0 }} // Начальное состояние
-        animate={{ translateY: 0, opacity: 1 }} // Состояние анимации
-        transition={{ duration: 1, delay: 2 }}
+        animate={descriptionControls}
       >
-        <div className="text-text-muted! flex gap-6">
+        <div className="text-text-muted! flex gap-6 items-center">
           <span>{releaseYear}</span>
           <span className="border border-text-muted rounded-sm px-2.5">
             {ageLimit}
