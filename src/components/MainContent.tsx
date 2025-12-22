@@ -24,7 +24,12 @@ export function MainContent() {
       document.body.style.overflow = "auto"
     }
   }, [])
-  if (!movie) return <p>Movie not found!</p>
+  if (!movie)
+    return (
+      <div className="h-screen flex justify-center items-center">
+        <p>Movie not found!</p>
+      </div>
+    )
 
   return (
     <main className="p-6 xl:p-12 relative bg-bg h-screen grid grid-row-1 xl:grid-rows-[auto_253px] justify-items-center">
