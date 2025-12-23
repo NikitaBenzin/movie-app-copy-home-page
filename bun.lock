@@ -2,7 +2,7 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {
-      "name": "netflix-home-page",
+      "name": "cinema-copy-home-page",
       "dependencies": {
         "@tailwindcss/vite": "^4.1.18",
         "framer": "^2.4.1",

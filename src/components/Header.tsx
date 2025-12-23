@@ -39,8 +39,8 @@ export function Header() {
           <li>
             <img
               className="w-18"
-              src="/netflix-logo.png"
-              alt="Netflix logo"
+              src="/cinema-copy-logo.png"
+              alt="Cinema copy logo"
               draggable={false}
             />
           </li>

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 
-export const NetflixPreloader = () => {
+export const CinemaPreloader = () => {
   return (
     <motion.div
       className="fixed inset-0 z-100 flex items-center justify-center bg-bg"
@@ -24,8 +24,8 @@ export const NetflixPreloader = () => {
       >
         <img
           className="w-42"
-          src="/netflix-logo.png"
-          alt="Netflix logo"
+          src="/cinema-copy-logo.png"
+          alt="Cinema copy logo"
           draggable={false}
         />
       </motion.div>
